@@ -16,9 +16,9 @@
         <td><%= roasting.name %></td>
         <td><%= roasting.description %></td>
         <td><%= roasting.price %></td>
-        <td><%= link_to 'Show', roasting %></td>
-        <td><%= link_to 'Edit', edit_roasting_path(roasting) %></td>
-        <td><%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', roasting, class: "btn btn-link" %></td>
+        <td><%= link_to 'Edit', edit_roasting_path(roasting), class: "btn btn-link" %></td>
+        <td><%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Roasting', new_roasting_path %>
+<%= link_to 'New Roasting', new_roasting_path, class: "btn btn-link" %>
