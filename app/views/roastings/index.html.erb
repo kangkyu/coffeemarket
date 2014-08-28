@@ -1,0 +1,29 @@
+<h1>Listing roastings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roastings.each do |roasting| %>
+      <tr>
+        <td><%= roasting.name %></td>
+        <td><%= roasting.description %></td>
+        <td><%= roasting.price %></td>
+        <td><%= link_to 'Show', roasting %></td>
+        <td><%= link_to 'Edit', edit_roasting_path(roasting) %></td>
+        <td><%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Roasting', new_roasting_path %>
