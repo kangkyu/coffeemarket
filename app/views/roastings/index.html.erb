@@ -13,6 +13,7 @@
   <tbody>
     <% @roastings.each do |roasting| %>
       <tr>
+        <td><%= image_tag roasting.image.url(:thumb) %></td>
         <td><%= roasting.name %></td>
         <td><%= roasting.description %></td>
         <td><%= roasting.price %></td>
