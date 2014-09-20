@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :roastings
 
   get 'pages/about'
 
   get 'pages/contact'
   root 'roastings#index'
+  # required for devise gem - defined our root URL root_url to *something*
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
