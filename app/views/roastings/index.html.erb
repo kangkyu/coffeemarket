@@ -1,14 +1,17 @@
 <div class="row">
   <% @roastings.each do |roasting| %>
   <div class="col-md-4">
-      <div class="thumbnail"><%= image_tag roasting.image.url %></div>
-      <div class="caption">
-        <h3><%= roasting.name %></h3>
-        <p><%= roasting.description %></p>
-        <p><%= number_to_currency(roasting.price) %></p>
-        <%= link_to 'Show', roasting, class: "btn btn-link" %>
-        <%= link_to 'Edit', edit_roasting_path(roasting), class: "btn btn-link" %>
-        <%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+      <div class="thumbnail">
+        <%= image_tag roasting.image.url %>
+        <div class="caption">
+          <h3><%= roasting.name %></h3>
+          <p><%= roasting.description %></p>
+          <p><%= number_to_currency(roasting.price) %></p>
+          <p><%= "Sold by #{roasting.user.name}" %></p>
+          <%= link_to 'Show', roasting, class: "btn btn-link" %>
+          <%= link_to 'Edit', edit_roasting_path(roasting), class: "btn btn-link" %>
+          <%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+        </div>
       </div>
     </div>
   <% end %>
