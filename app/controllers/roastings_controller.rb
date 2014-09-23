@@ -1,5 +1,7 @@
 class RoastingsController < ApplicationController
   before_action :set_roasting, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /roastings
   # GET /roastings.json
@@ -71,5 +73,11 @@ class RoastingsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def roasting_params
       params.require(:roasting).permit(:name, :description, :price, :image)
+    end
+
+    def check_user
+      if current_user.id != @roasting.user_id
+        redirect_to root_url, alert: "This listing belogs to somewhere else"
+      end
     end
 end
