@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass', '~> 3.2.0'
 gem "paperclip", "~> 4.1"
 gem "paperclip-dropbox", ">= 1.1.7"
+gem "figaro"
+
 gem 'devise'
 
 
