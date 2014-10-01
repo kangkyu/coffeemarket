@@ -1,6 +1,5 @@
-<div class="row">
+<div class="row" id="columns">
   <% @roastings.each do |roasting| %>
-  <div class="col-md-4">
       <div class="thumbnail">
         <%= image_tag roasting.image.url %>
         <div class="caption">
@@ -15,7 +14,6 @@
           <% end %>
         </div>
       </div>
-    </div>
   <% end %>
 </div>
 
