@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :roastings
 
   get 'pages/about'
-
   get 'pages/contact'
+
+  get 'seller' => "roastings#seller"
   root 'roastings#index'
   # required for devise gem - defined our root URL root_url to *something*
 

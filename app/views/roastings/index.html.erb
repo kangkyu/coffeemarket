@@ -1,5 +1,6 @@
 <div class="row" id="columns">
   <% @roastings.each do |roasting| %>
+      
       <div class="thumbnail">
         <%= image_tag roasting.image.url %>
         <div class="caption">
@@ -8,15 +9,14 @@
           <p><%= number_to_currency(roasting.price) %></p>
           <p><%= "Sold by #{roasting.user.name}" %></p>
           <%= link_to 'Show', roasting, class: "btn btn-link" %>
-          <% if user_signed_in? && (current_user == roasting.user) %>
-          <%= link_to 'Edit', edit_roasting_path(roasting), class: "btn btn-link" %>
-          <%= link_to 'Destroy', roasting, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
-          <% end %>
         </div>
       </div>
+
   <% end %>
 </div>
 
+<br>
+
 <% if user_signed_in? %>
-<%= link_to 'New Roasting', new_roasting_path, class: "btn btn-link" %>
+  <%= link_to 'New Roasting', new_roasting_path, class: "btn btn-link", data: {no_turbolink:true} %>
 <% end %>

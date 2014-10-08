@@ -3,10 +3,14 @@ class RoastingsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
+  def seller
+    @roastings = Roasting.where(user: current_user).order("created_at desc")
+  end
+
   # GET /roastings
   # GET /roastings.json
   def index
-    @roastings = Roasting.all
+    @roastings = Roasting.all.order("created_at desc")
   end
 
   # GET /roastings/1
