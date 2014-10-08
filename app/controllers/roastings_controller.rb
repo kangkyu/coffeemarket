@@ -1,6 +1,6 @@
 class RoastingsController < ApplicationController
   before_action :set_roasting, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:index, :show]
+  before_filter :authenticate_user!, except: :index
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def seller
