@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :orders
-
   devise_for :users
-  resources :roastings
+  resources :roastings do
+    resources :orders
+  end
 
   get 'pages/about'
   get 'pages/contact'
