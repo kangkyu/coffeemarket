@@ -10,7 +10,7 @@
   <% @roastings.each do |roasting| %>
 
     <tr>
-      <td><%= image_tag(roasting.image.url(:thumb)) %></td>
+      <td><%= image_tag roasting.image.url(:thumb) %></td>
       <td><%= roasting.name %></td>
       <td><%= roasting.description %></td>
       <td><%= number_to_currency(roasting.price) %></td>
