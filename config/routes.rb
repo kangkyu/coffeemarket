@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   get 'seller' => "roastings#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
   root 'roastings#index'
   # required for devise gem - defined our root URL root_url to *something*
 

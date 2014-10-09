@@ -2,6 +2,14 @@ class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
+  def sales
+    @orders = Order.where(seller: current_user)
+  end
+
+  def purchases
+    @orders = Order.where(buyer: current_user)
+  end
+
   # GET /orders
   # GET /orders.json
   def index
@@ -11,6 +19,7 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @roasting = Roasting.find(params[:roasting_id])
   end
 
   # GET /orders/new
