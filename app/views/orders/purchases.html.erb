@@ -7,8 +7,8 @@
     <th class="center">Image</th>
     <th class="center">Item</th>
     <th class="center">Price</th>
-    <th class="center">Customer</th>
-    <th class="center">Date Sold</th>
+    <th class="center">Seller</th>
+    <th class="center">Date Purchased</th>
   </tr>
 
   <% @orders.each do |order| %>
@@ -17,7 +17,7 @@
       <td><%= image_tag order.roasting.image.url(:thumb) %></td>
       <td><%= order.roasting.name %></td>
       <td><%= number_to_currency(order.roasting.price) %></td>
-      <td><%= order.buyer.name %></td>
+      <td><%= order.seller.name %></td>
       <td><%= order.created_at.strftime("%B %-d, %Y") %></td>
     </tr>
 
