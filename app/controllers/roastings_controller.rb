@@ -1,7 +1,7 @@
 class RoastingsController < ApplicationController
   before_action :set_roasting, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, except: :index
-  before_filter :check_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: :index
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   def seller
     @roastings = Roasting.where(user: current_user).order("created_at desc")
