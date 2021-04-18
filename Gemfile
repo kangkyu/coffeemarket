@@ -10,6 +10,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+# Use Puma as the app server
+gem 'puma', '~> 3.11'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -26,7 +29,7 @@ gem "figaro"
 gem 'devise', '4.6.2'
 
 group :production do
-  gem 'pg', '0.21.0'
+  gem 'pg', '>= 0.18', '< 2.0'
   gem 'rails_12factor'
 end
 
