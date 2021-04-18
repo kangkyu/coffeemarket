@@ -1,4 +1,4 @@
-class Roasting < ActiveRecord::Base
+class Roasting < ApplicationRecord
 
   if Rails.env.development?
     has_attached_file :image,

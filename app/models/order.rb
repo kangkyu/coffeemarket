@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   validates :address, :city, :state, presence: true
 
   belongs_to :roasting
