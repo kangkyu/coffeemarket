@@ -24,7 +24,7 @@ end
 gem 'bootstrap-sass', '~> 3.4.1'
 gem "figaro"
 
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
