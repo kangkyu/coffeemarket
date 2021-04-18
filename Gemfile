@@ -22,8 +22,6 @@ group :development do
 end
 
 gem 'bootstrap-sass', '~> 3.4.1'
-gem "paperclip", "~> 4.1"
-gem "paperclip-dropbox", ">= 1.1.7"
 gem "figaro"
 
 gem 'devise', '4.6.2'
